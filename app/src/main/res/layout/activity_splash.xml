@@ -14,8 +14,9 @@
         android:gravity="bottom|center"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="40dp"
+        android:textStyle="italic"
         android:text="@string/splash_screen_text"
         />
 
