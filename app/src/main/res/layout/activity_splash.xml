@@ -10,14 +10,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/SheetMusic"
+        android:background="@drawable/sheetmusic"
         android:gravity="bottom|center"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:textColor="@android:color/black"
         android:textSize="40dp"
         android:textStyle="italic"
         android:text="@string/splash_screen_text"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
