@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps">
+    package="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps">
 
     <application
         android:allowBackup="true"
@@ -11,15 +11,19 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuizActivity">
-        </activity>
-        <activity android:name=".HomeActivity">
-        </activity>
+        <activity android:name=".EarTrainingQuizActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".GeneralSettingsActivity" />
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".SightSingingQuizActivity" />
+        <activity android:name=".AuditionRoomActivity" />
+        <activity android:name=".EarTrainingQuizSettingsActivity" />
+        <activity android:name=".NewUserActivity"></activity>
     </application>
 
 </manifest>

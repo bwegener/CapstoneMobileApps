@@ -5,19 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class HomeActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_menu);
     }
 
     public void intervalQuiz(View v) {
 
-        Intent launchIntervalQuiz = new Intent(this, QuizActivity.class);
+        Intent launchEarTrainingQuiz = new Intent(this, EarTrainingQuizActivity.class);
 
-        startActivity(launchIntervalQuiz);
+        startActivity(launchEarTrainingQuiz);
 
     }
 }
