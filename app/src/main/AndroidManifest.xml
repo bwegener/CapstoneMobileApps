@@ -16,13 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GeneralSettingsActivity"
+                  android:parentActivityName=".MainMenuActivity"/>
+
+        <activity android:name=".EarTrainingQuizSettingsActivity"
+                  android:parentActivityName=".EarTrainingQuizActivity"/>
+
         <activity android:name=".EarTrainingQuizActivity" />
+
         <activity android:name=".MainMenuActivity" />
+
         <activity android:name=".LogInActivity" />
+
         <activity android:name=".SightSingingQuizActivity" />
+
         <activity android:name=".AuditionRoomActivity" />
-        <activity android:name=".EarTrainingQuizSettingsActivity" />
+
         <activity android:name=".NewUserActivity" />
+
         <activity android:name=".EarTrainingMenuActivity"></activity>
     </application>
 
