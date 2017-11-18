@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.MenuActivity"
+    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.MainMenuActivity"
     >
 
 
@@ -17,43 +17,36 @@
         android:layout_gravity="center_vertical"
         android:text="@string/main_menu"
         android:textAlignment="center"
-        android:textSize="40sp"/>
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="381dp"
-        android:layout_height="290dp"
-        android:layout_gravity="top|center"
-        android:layout_margin="10dp"
-        android:onClick="intervalQuiz"
-        app:srcCompat="@drawable/interval"/>
+        android:textSize="@dimen/big_text_size"/>
 
     <Button
-        android:id="@+id/intervalButton"
+        android:id="@+id/earTrainingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
+        android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:onClick="intervalQuiz"
-        android:padding="10dp"
+        android:onClick="earTrainingMenu"
+        android:padding="@dimen/buttons_padding"
         android:text="@string/interval_quiz_button"/>
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="306dp"
-        android:layout_height="356dp"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="10dp"
-        android:onClick="sightsingingQuiz"
-        app:srcCompat="@drawable/sightsinging"/>
 
     <Button
         android:id="@+id/singingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
+        android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:onClick="sightsingingQuiz"
-        android:padding="10dp"
+        android:onClick="sightSinging"
+        android:padding="@dimen/buttons_padding"
         android:text="@string/sight_singing_quiz_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:onClick="auditionRoom"
+        android:padding="@dimen/buttons_padding"
+        android:text="@string/audition_room_button"
+        />
 </LinearLayout>

@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.EarTrainingMenuActivity">
+    android:orientation="vertical"
+    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.MainMenuActivity"
+    >
 
-</android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/intervalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/buttons_margin"
+        android:onClick="earTrainingQuiz"
+        android:text="@string/interval_quiz_button"/>
+
+    <Button
+        android:id="@+id/chordQualityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/buttons_margin"
+        android:onClick="earTrainingQuiz"
+        android:text="@string/chord_quality_quiz_button"/>
+
+    <Button
+        android:id="@+id/modalityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/buttons_margin"
+        android:onClick="earTrainingQuiz"
+        android:text="@string/modality_quiz_button"/>
+
+
+</LinearLayout>

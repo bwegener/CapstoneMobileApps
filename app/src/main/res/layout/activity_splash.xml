@@ -5,16 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sheetmusic"
     tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.SplashActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/sheetmusic"
-        android:gravity="bottom|center"
+        android:gravity="top|center"
         android:layout_alignParentBottom="true"
         android:textColor="@android:color/black"
-        android:textSize="40dp"
+        android:textSize="@dimen/big_text_size"
         android:textStyle="italic"
         android:text="@string/splash_screen_text"
         android:layout_alignParentTop="true"

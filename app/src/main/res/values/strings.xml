@@ -2,7 +2,13 @@
     <string name="app_name">CapstoneMobileApps</string>
     <string name="splash_screen_text">Aurally</string>
     <string name="interval_quiz_button">Interval Quiz</string>
-    <string name="sight_singing_quiz_button">Sightsinging Button</string>
+    <string name="chord_quality_quiz_button">Chord Quality Quiz</string>
+    <string name="modality_quiz_button">Modality Quiz</string>
+    <string name="action_general_settings">General Settings</string>
+    <string name="action_ear_training_settings">Ear Training Settings</string>
+    <string name="ear_training_button">Ear Training</string>
+    <string name="audition_room_button">Audition Room</string>
+    <string name="sight_singing_quiz_button">Sight Singing</string>
     <string name="main_menu">Main Menu</string>
     <string name="question">Question %1$d of %2$d</string>
     <string name="guess_interval">Guess the Interval</string>

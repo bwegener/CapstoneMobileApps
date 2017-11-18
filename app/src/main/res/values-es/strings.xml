@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CapstoneMobileApps</string>
+    <string name="guess_interval">Adivina el Intervalo</string>
+    <string name="interval_quiz_button">Cuestionario de Intervalo</string>
+    <string name="main_menu">Menú Principal</string>
+    <string name="question">Pregunta %1$d de %2$d</string>
+    <string name="sight_singing_quiz_button">Sight Singing</string>
+</resources>

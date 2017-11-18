@@ -17,8 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".EarTrainingQuizActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".GeneralSettingsActivity" />
+        <activity android:name=".MainMenuActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".SightSingingQuizActivity" />
         <activity android:name=".AuditionRoomActivity" />

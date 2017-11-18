@@ -5,20 +5,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class EarTrainingMenuActivity extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ear_training_menu);
+        setContentView(R.layout.activity_main_menu);
     }
 
+    public void earTrainingMenu(View v) {
 
-    public void earTrainingQuiz(View v) {
+        Intent launchEarTrainingMenu = new Intent(this, EarTrainingMenuActivity.class);
 
-        Intent launchEarTrainingQuiz = new Intent(this, EarTrainingQuizActivity.class);
+        startActivity(launchEarTrainingMenu);
 
-        startActivity(launchEarTrainingQuiz);
+    }
+
+    public void auditionRoom(View v) {
+
 
     }
 }

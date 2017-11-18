@@ -8,6 +8,6 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_ear_training);
+        setContentView(R.layout.activity_ear_training_quiz);
     }
 }
