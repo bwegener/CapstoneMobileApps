@@ -1,9 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sheetmusic"
+    android:orientation="vertical"
     tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.NewUserActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/buttons_text_margin"
+        android:ems="10"
+        android:hint="@string/user_name"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/medium_text_size"/>
+
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/buttons_text_margin"
+        android:ems="10"
+        android:hint="@string/first_name"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/medium_text_size"/>
+
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/buttons_text_margin"
+        android:ems="10"
+        android:hint="@string/last_name"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/medium_text_size"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/buttons_text_margin"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/medium_text_size"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/createUserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="@dimen/buttons_text_margin"
+            android:layout_weight="1"
+            android:padding="@dimen/buttons_padding"
+            android:textSize="@dimen/medium_text_size"
+            android:onClick="createUser"
+            android:text="@string/sign_up_button"/>
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="@dimen/buttons_text_margin"
+            android:layout_weight="1"
+            android:padding="@dimen/buttons_padding"
+            android:textSize="@dimen/medium_text_size"
+            android:onClick="cancel"
+            android:text="@string/cancel_button"/>
+
+    </LinearLayout>
+</LinearLayout>

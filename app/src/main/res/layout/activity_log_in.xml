@@ -5,24 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.LogInActivity"
-    android:orientation="vertical">
+    android:background="@drawable/sheetmusic"
+    android:orientation="vertical"
+    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.LogInActivity">
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttons_text_margin"
         android:ems="10"
+        android:hint="@string/user_name"
         android:inputType="textPersonName"
-        android:text="Name"/>
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="@dimen/medium_text_size"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttons_text_margin"
         android:ems="10"
-        android:inputType="textPassword"/>
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textSize="@dimen/medium_text_size"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,15 +42,23 @@
             android:id="@+id/signInButton"
             android:layout_width="378dp"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/buttons_text_margin"
             android:layout_weight="1"
-            android:text=""/>
+            android:padding="@dimen/buttons_padding"
+            android:textSize="@dimen/medium_text_size"
+            android:onClick="signIn"
+            android:text="@string/sign_in_button"/>
 
         <Button
             android:id="@+id/newUserButton"
             android:layout_width="391dp"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/buttons_text_margin"
             android:layout_weight="1"
-            android:text="Button"/>
+            android:padding="@dimen/buttons_padding"
+            android:textSize="@dimen/medium_text_size"
+            android:onClick="signUp"
+            android:text="@string/sign_up_button"/>
     </LinearLayout>
 
 </LinearLayout>

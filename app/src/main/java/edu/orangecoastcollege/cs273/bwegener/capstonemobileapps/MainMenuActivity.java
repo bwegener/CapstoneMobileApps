@@ -21,6 +21,12 @@ public class MainMenuActivity extends AppCompatActivity {
 
     }
 
+    public void sightSinging(View v)
+    {
+
+
+    }
+
     public void auditionRoom(View v) {
 
 

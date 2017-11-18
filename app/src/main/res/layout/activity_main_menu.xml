@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/sheetmusic"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.MainMenuActivity"
@@ -17,6 +18,8 @@
         android:layout_gravity="center_vertical"
         android:text="@string/main_menu"
         android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/royalBlue"
         android:textSize="@dimen/big_text_size"/>
 
     <Button

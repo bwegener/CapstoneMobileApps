@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/sheetmusic"
     tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.EarTrainingMenuActivity"
     >
 
@@ -15,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/buttons_margin"
+        android:layout_margin="@dimen/buttons_text_margin"
         android:onClick="earTrainingQuiz"
         android:text="@string/interval_quiz_button"/>
 
@@ -24,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/buttons_margin"
+        android:layout_margin="@dimen/buttons_text_margin"
         android:onClick="earTrainingQuiz"
         android:text="@string/chord_quality_quiz_button"/>
 
@@ -33,9 +34,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/buttons_margin"
+        android:layout_margin="@dimen/buttons_text_margin"
         android:onClick="earTrainingQuiz"
         android:text="@string/modality_quiz_button"/>
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/buttons_text_margin"
+        android:onClick="returnToMain"
+        android:text="@string/return_button"/>
 
 
 </LinearLayout>

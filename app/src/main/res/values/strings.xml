@@ -5,13 +5,14 @@
 
     <!-- Log-In -->
     <string name="sign_in_button">Sign In</string>
-    <string name="new_user_button">Sign Up</string>
+    <string name="sign_up_button">Sign Up</string>
 
     <!-- New User -->
     <string name="user_name">User Name</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="password">Password</string>
+    <string name="cancel_button">Cancel</string>
 
 
     <!-- Main Menu -->
@@ -27,7 +28,9 @@
     <string name="modality_quiz_button">Modality Quiz</string>
     <string name="ear_training_settings">Ear Training Settings</string>
     <string name="interval_quiz_button">Interval Quiz</string>
+    <string name="return_button">Return</string>
 
+    <!-- Ear Training Quiz -->
     <string name="question">Question %1$d of %2$d</string>
     <string name="guess_interval">Guess the Interval</string>
 
