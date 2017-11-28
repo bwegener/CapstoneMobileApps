@@ -15,17 +15,18 @@
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <ImageView
-        android:id="@+id/NotesImageView"
+        android:id="@+id/earTrainingImageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:background="@drawable/green_play_button"
         android:elevation="50dp"
         android:scaleType="fitCenter"/>
 
     <TextView
-        android:id="@+id/guessIntervalTextView"
+        android:id="@+id/guessTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

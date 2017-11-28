@@ -32,7 +32,20 @@
 
     <!-- Ear Training Quiz -->
     <string name="question">Question %1$d of %2$d</string>
+    <string name="guess">Guess the %1$s</string>
+    <string name="incorrect_answer">Incorrect!</string>
+    <string name="results">%1$d guesses, %2$.01f%% correct</string>
     <string name="guess_interval">Guess the Interval</string>
+    <string name="quiz_type">Type of Quiz</string>
+    <string name="quiz_type_description">Choose interval, chord, or modal</string>
+    <string name="interval_type">Interval</string>
+    <string name="chord_type">Chord</string>
+    <string name="mode_type">Mode</string>
+    <string name="pref_default">@string/interval_type</string>
+    <string name="pref_key">pref_quiz_type</string>
+    <string name="restarting_quiz">Quiz will restart with your new settings</string>
+    <string name="reset_quiz">Reset Quiz</string>
+    <string name="default_quiz_type">Interval</string>
 
 
 </resources>
