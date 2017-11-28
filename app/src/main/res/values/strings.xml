@@ -1,7 +1,7 @@
 <resources>
     <!-- App Name -->
     <string name="app_name">CapstoneMobileApps</string>
-    <string name="splash_screen_text">Aurally</string>
+    <string name="splash_screen_text">Audiate</string>
 
     <!-- Log-In -->
     <string name="sign_in_button">Sign In</string>
