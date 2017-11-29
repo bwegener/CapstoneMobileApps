@@ -16,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.InputStream;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,8 +31,8 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
 
     private Button[] mButtons = new Button[4]; // this can be changed in the future
 
-    private List<Note> mAllNotesList;
-    private List<Note> mQuizNotesList;
+    private List<ChordScale> mAllChordScaleList;
+    private List<ChordScale> mQuizChordScaleList;
 
 
     private List<String> mQuizIntervalsList;
@@ -90,10 +89,18 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         mButtons[2] = (Button) findViewById(R.id.button3);
         mButtons[3] = (Button) findViewById(R.id.button4);
 
-        // TODO: Fix this
-        /*
-        Need to cycle through all the intervals
-         */
+        // TODO: Finish Looping through intervals
+        // TODO: go to GitHub copy/paste DBHelper
+        // List of all intervals
+        // For Each loop List of FilteredIntervals
+        // List of allIntervals
+
+        // Call the import from CSV method from db
+        // make a list populate with getAllIntervals()
+
+        // Create 3 lists: intervals, chord quality, modality
+
+        //
 
         mAllIntervalsList = new ArrayList<>();
         mAllChordsList = new ArrayList<>();
@@ -103,10 +110,10 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         /*
         Need help with this
          */
-        for (Note n : mAllNotesList) {
-            mAllIntervalsList.add(n.getName());
-            mAllChordsList.add(n.getName());
-            mAllModesList.add(n.getName());
+        for (ChordScale c : mAllChordScaleList) {
+            mAllIntervalsList.add(c.getName());
+            mAllChordsList.add(c.getName());
+            mAllModesList.add(c.getName());
         }
 
         mQuizIntervalsList = new ArrayList<>(QUESTIONS_IN_QUIZ);
@@ -154,7 +161,7 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         mGuessTextView.setText(getString(R.string.guess, mQuizType));
 
         while(mQuizIntervalsList.size() < QUESTIONS_IN_QUIZ) {
-            int randomPosition = rng.nextInt(mAllNotesList.size()); // Not sure if this is right
+            int randomPosition = rng.nextInt(mAllChordScaleList.size()); // Not sure if this is right
             if (!mQuizIntervalsList.contains(mAllIntervalsList.get(randomPosition)))
                 mQuizIntervalsList.add(mAllIntervalsList.get(randomPosition));
         }
