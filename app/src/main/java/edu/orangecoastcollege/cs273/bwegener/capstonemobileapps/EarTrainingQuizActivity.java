@@ -3,7 +3,9 @@ package edu.orangecoastcollege.cs273.bwegener.capstonemobileapps;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -78,6 +80,12 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ear_training_quiz);
+
+        // This should set up the back button to be displayed
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // This should fill out the content in the ear training settings.
+        getFragmentManager().beginTransaction().replace(android.R.id.content, new EarTrainingSettingsActivityFragment()).commit();
 
         mQuestionNumberTextView = (TextView) findViewById(R.id.questionNumberTextView);
         mEarTrainingImageView = (ImageView) findViewById(R.id.earTrainingImageView);
@@ -285,5 +293,15 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         startActivity(earTrainingSettingsIntent);
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static class EarTrainingSettingsActivityFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+
+            super.onCreate(savedInstanceState);
+
+            addPreferencesFromResource(R.xml.preferences);
+        }
     }
 }

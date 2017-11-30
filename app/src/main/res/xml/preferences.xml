@@ -2,11 +2,25 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ListPreference
-
+        android:entries="@array/guesses_list"
+        android:entryValues="@array/guesses_list"
+        android:key="pref_numberOfChoices"
+        android:title="@string/number_of_buttons"
+        android:summary="@string/number_of_buttons_description"
+        android:persistent="true"
+        android:defaultValue="4"
         />
 
     <ListPreference
-
-        />
+        android:entries="@array/intervals_list"
+        android:entryValues="@array/intervals_list"
+        android:key="pref_intervals"
+        android:title="@string/intervals"
+        android:summary="@string/intervals_description"
+        android:persistent="true" />
+        <!-- TODO: MAKE THIS WORK
+        <!- DOES NOT WORK FOR SOME REASON
+        android:defaultValue="Basic"
+        -->
 
 </PreferenceScreen>

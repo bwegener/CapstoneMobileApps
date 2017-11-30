@@ -1,28 +1,61 @@
 package edu.orangecoastcollege.cs273.bwegener.capstonemobileapps;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
+ * The <code>User</code> creates a user with a specific ID, user name, first name,
+ * last name, password, and gets their latitude, and longitude.
+ *
+ * @author bwegener
+ * @version 1.0
+ *
  * Created by Brian Wegener on 11/17/17.
  */
 
-public class User {
+public class User implements Parcelable {
 
-    private String mId;
+    private long mId;
     private String mUserName;
     private String mFirstName;
     private String mLastName;
+    private String mEmail;
     private String mPassword;
+    private double mLatitude;
+    private double mLongitude;
 
-    public User(String userName, String firstName, String lastName, String password)
+    public User(long id, String userName, String firstName, String lastName, String email, String password, double latitude, double longitude)
     {
+        mId = id;
         mUserName = userName;
         mFirstName = firstName;
         mLastName = lastName;
+        mEmail = email;
         mPassword = password;
+        mLatitude = latitude;
+        mLongitude = longitude;
     }
 
-    public String getId() {
+    public User(String userName, String firstName, String lastName, String email, String password, double latitude, double longitude) {
+        this(-1, userName, firstName, lastName, email, password, latitude, longitude);
+    }
+
+    protected User(Parcel in) {
+        mId = in.readLong();
+        mUserName = in.readString();
+        mFirstName = in.readString();
+        mLastName = in.readString();
+        mEmail = in.readString();
+        mPassword = in.readString();
+        mLatitude = in.readDouble();
+        mLongitude = in.readDouble();
+    }
+
+    public long getId() {
         return mId;
     }
+
+    public void setId(long id) { mId = id; }
 
     public String getUserName() {
         return mUserName;
@@ -48,6 +81,10 @@ public class User {
         mLastName = lastName;
     }
 
+    public String getEmail() { return mEmail; }
+
+    public void setEmail(String email) { mEmail = email; }
+
     protected String getPassword() {
         return mPassword;
     }
@@ -56,42 +93,41 @@ public class User {
         mPassword = password;
     }
 
+    public double getLatitude() { return mLatitude; }
+
+    public void setLatitude(double latitude) { mLatitude = latitude; }
+
+    public double getLongitude() { return mLongitude; }
+
+    public void setLongitude(double longitude) { mLongitude = longitude; }
+
+
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (mId != null ? !mId.equals(user.mId) : user.mId != null) return false;
-        if (mUserName != null ? !mUserName.equals(user.mUserName) : user.mUserName != null)
-            return false;
-        if (mFirstName != null ? !mFirstName.equals(user.mFirstName) : user.mFirstName != null)
-            return false;
-        if (mLastName != null ? !mLastName.equals(user.mLastName) : user.mLastName != null)
-            return false;
-        return mPassword != null ? mPassword.equals(user.mPassword) : user.mPassword == null;
-
+    public int describeContents() {
+        return 0;
     }
 
     @Override
-    public int hashCode() {
-        int result = mId != null ? mId.hashCode() : 0;
-        result = 31 * result + (mUserName != null ? mUserName.hashCode() : 0);
-        result = 31 * result + (mFirstName != null ? mFirstName.hashCode() : 0);
-        result = 31 * result + (mLastName != null ? mLastName.hashCode() : 0);
-        result = 31 * result + (mPassword != null ? mPassword.hashCode() : 0);
-        return result;
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeLong(mId);
+        parcel.writeString(mUserName);
+        parcel.writeString(mFirstName);
+        parcel.writeString(mLastName);
+        parcel.writeString(mEmail);
+        parcel.writeString(mPassword);
+        parcel.writeDouble(mLatitude);
+        parcel.writeDouble(mLongitude);
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "mId='" + mId + '\'' +
-                ", mUserName='" + mUserName + '\'' +
-                ", mFirstName='" + mFirstName + '\'' +
-                ", mLastName='" + mLastName + '\'' +
-                ", mPassword='" + mPassword + '\'' +
-                '}';
-    }
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 }

@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/sheetmusic"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.MainMenuActivity"
@@ -16,40 +15,102 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_marginTop="50dp"
         android:text="@string/main_menu"
         android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="@color/royalBlue"
-        android:textSize="@dimen/big_text_size"/>
+        android:textColor="@color/royal_blue"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/earTrainingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:onClick="earTrainingMenu"
-        android:padding="@dimen/buttons_padding"
-        android:text="@string/interval_quiz_button"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/earTrainingButton"
+                android:layout_width="match_parent"
+                android:layout_height="571dp"
+                app:srcCompat="@drawable/ear_training"
+                android:clickable="true"
+                android:onClick="earTrainingMenu"
+                />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/small_text_size"
+                android:textAlignment="center"
+                android:layout_gravity="center_vertical"
+                android:text="@string/ear_training_button"/>
 
 
-    <Button
-        android:id="@+id/singingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:onClick="sightSinging"
-        android:padding="@dimen/buttons_padding"
-        android:text="@string/sight_singing_quiz_button"/>
+        </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:onClick="auditionRoom"
-        android:padding="@dimen/buttons_padding"
-        android:text="@string/audition_room_button"
-        />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+
+            <ImageView
+                android:id="@+id/sightSingingButton"
+                android:layout_width="254dp"
+                android:layout_height="571dp"
+                android:onClick="sightSinging"
+                android:clickable="true"
+                app:srcCompat="@drawable/sightsinging"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/small_text_size"
+                android:textAlignment="center"
+                android:layout_gravity="center_vertical"
+                android:text="@string/sight_singing_button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/auditionRoomButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.03"
+                android:onClick="auditionRoom"
+                android:clickable="true"
+                app:srcCompat="@drawable/music_library"
+                />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="174dp"
+                android:textSize="@dimen/small_text_size"
+                android:textAlignment="center"
+                android:layout_gravity="center_vertical"
+                android:text="@string/audition_room_button"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

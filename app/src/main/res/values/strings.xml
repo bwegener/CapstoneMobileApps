@@ -19,7 +19,7 @@
     <string name="main_menu">Main Menu</string>
     <string name="ear_training_button">Ear Training</string>
     <string name="general_settings">General Settings</string>
-    <string name="sight_singing_quiz_button">Sight Singing</string>
+    <string name="sight_singing_button">Sight Singing</string>
     <string name="audition_room_button">Audition Room</string>
 
 
@@ -28,7 +28,8 @@
     <string name="modality_quiz_button">Modality Quiz</string>
     <string name="ear_training_settings">Ear Training Settings</string>
     <string name="interval_quiz_button">Interval Quiz</string>
-    <string name="return_button">Return</string>
+    <string name="ear_training_menu">Ear Training Menu</string>
+    <string name="return_text">Return to Main Menu</string>
 
     <!-- Ear Training Quiz -->
     <string name="question">Question %1$d of %2$d</string>
@@ -38,10 +39,13 @@
     <string name="guess_interval">Guess the Interval</string>
     <string name="quiz_type">Type of Quiz</string>
     <string name="quiz_type_description">Choose interval, chord, or modal</string>
-    <string name="interval_type">Interval</string>
-    <string name="chord_type">Chord</string>
-    <string name="mode_type">Mode</string>
-    <string name="pref_default">@string/interval_type</string>
+    <string name="intervals">Intervals</string>
+    <string name="intervals_description">How difficult would you like the interval quiz?</string>
+    <string name="chord_type">Chords</string>
+    <string name="mode_type">Modes</string>
+    <string name="number_of_buttons">Number of Buttons</string>
+    <string name="number_of_buttons_description">2, 4, 6, or 8 guess buttons</string>
+    <string name="pref_default">@string/intervals</string>
     <string name="pref_key">pref_quiz_type</string>
     <string name="restarting_quiz">Quiz will restart with your new settings</string>
     <string name="reset_quiz">Reset Quiz</string>

@@ -12,5 +12,9 @@
 
 
     <!-- Custom Colors -->
-    <color name="royalBlue">#4169e1</color>
+    <color name="royal_blue">#4169e1</color>
+    <color name="blue_grey">#6E7B8B</color>
+    <color name="light_blue_grey">#5B6E91</color>
+    <color name="neon_green">#39FF14</color>
+    <color name="black">#000000</color>
 </resources>

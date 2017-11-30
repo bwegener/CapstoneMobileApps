@@ -11,6 +11,9 @@ public class EarTrainingMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ear_training_menu);
+
+        // This should create the return button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 
@@ -26,5 +29,10 @@ public class EarTrainingMenuActivity extends AppCompatActivity {
         Intent launchMainMenu = new Intent(this, MainMenuActivity.class);
 
         startActivity(launchMainMenu);
+    }
+
+    public void googleMaps(View v)
+    {
+
     }
 }

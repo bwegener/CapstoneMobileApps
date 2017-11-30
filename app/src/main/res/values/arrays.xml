@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- string-array for interval settings -->
+    <string-array name="intervals_list">
+        <item>All</item>
+        <item>Basic</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+    </string-array>
+
+    <!-- string array for guesses/buttons -->
+    <string-array name="guesses_list">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+
+    </string-array>
+
+
 </resources>
