@@ -11,7 +11,7 @@
 
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/userNameLogInET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttons_text_margin"
@@ -23,7 +23,7 @@
         android:textSize="@dimen/medium_text_size"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordLogInET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttons_text_margin"

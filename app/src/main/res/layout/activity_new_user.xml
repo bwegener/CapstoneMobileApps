@@ -11,8 +11,7 @@
 
 
     <EditText
-        android:id="@+id/userName"
-
+        android:id="@+id/userNameCreateET"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -25,7 +24,7 @@
         android:textSize="@dimen/medium_text_size"/>
 
     <EditText
-        android:id="@+id/firstName"
+        android:id="@+id/firstNameCreateET"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,7 +37,7 @@
         android:textSize="@dimen/medium_text_size"/>
 
     <EditText
-        android:id="@+id/lastName"
+        android:id="@+id/lastNameCreateET"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -51,7 +50,7 @@
         android:textSize="@dimen/medium_text_size"/>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailCreateET"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -63,7 +62,7 @@
         android:textSize="@dimen/medium_text_size"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordCreateET"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
