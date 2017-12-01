@@ -119,10 +119,11 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
 
         mAllIntervalsList = new ArrayList<>();
 
+        // Already handled in the DBHelper
+        /*
         AssetManager am = mContext.getAssets();
         InputStream inStream;
 
-        // TODO: NEED TO FIX THE inStream at the BufferedReader
         try {
             inStream = am.open("intervals.csv");
             BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
@@ -146,6 +147,7 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
+        */
 
 
 

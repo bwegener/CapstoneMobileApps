@@ -161,6 +161,4 @@ public class GoogleMapsActivity extends AppCompatActivity implements OnMapReadyC
 
     }
 
-    // TODO: Add a back button to the screen
-
 }

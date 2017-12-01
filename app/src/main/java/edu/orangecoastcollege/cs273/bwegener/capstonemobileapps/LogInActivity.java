@@ -75,6 +75,8 @@ public class LogInActivity extends AppCompatActivity {
 
     public void googleMaps(View v)
     {
+        Intent launchGoogleMaps = new Intent(this, GoogleMapsActivity.class);
 
+        startActivity(launchGoogleMaps);
     }
 }
