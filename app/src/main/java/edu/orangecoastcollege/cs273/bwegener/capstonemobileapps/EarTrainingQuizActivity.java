@@ -199,7 +199,7 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         }
         */
 
-        if(mQuizType.equals(getString(R.string.interval_type)))
+        if(mQuizType.equals(getString(R.string.intervals)))
         {
             mAllQuizTypeList = new ArrayList<>(mAllIntervalsList);
             // TODO: Get the name of the correct interval
@@ -247,7 +247,7 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
             mAnswerTextView.setTextColor(ContextCompat.getColor(this, R.color.correct_answer));
 
             if(mCorrectGuesses < QUESTIONS_IN_QUIZ) {
-                // TODO: Fix this
+                // TODO: Fix the handler
                 // Not sure why this has issues
 
                 /*

@@ -25,8 +25,13 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
+        // TODO: Use anim to bring the edit texts in
+
         userNameLogIn = (EditText) findViewById(R.id.userNameLogInET);
         passwordLogIn = (EditText) findViewById(R.id.passwordLogInET);
+
+
+
     }
 
 

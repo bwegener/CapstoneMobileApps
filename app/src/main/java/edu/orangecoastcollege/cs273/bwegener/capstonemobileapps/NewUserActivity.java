@@ -17,38 +17,6 @@ public class NewUserActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    // TODO: FINISH THIS
-    public boolean isValidUserName(String userName)
-    {
-
-        // Cycle through a list of user names
-        // make sure that the same user name has not
-        // been used before.
-        /*
-
-         */
-        return true;
-    }
-
-    // TODO: MAKE THIS WORK
-    public boolean isValidPassword(String password)
-    {
-        // Valid password must contain (see regex below):
-        // At least one lower case letter
-        // At least one digit
-        // At least one special character (@, #, $, %, !)
-        // At least one upper case letter
-        // At least 8 characters long, but no more than 16
-        return password.matches("((?=.*[a-z])(?=.*d)(?=.*[@#$%!])(?=.*[A-Z]).{8,16})");
-    }
-
-    // TODO: MAKE SURE THIS WORKS
-    public boolean isValidEmail(String email)
-    {
-        // This checks to see if the email is valid
-        return email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
-                "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9] + )*(\\.[A-Za-z]{2,})$");
-    }
 
     // TODO: MAKE THIS WHOLE METHOD WORK
     /*
@@ -104,6 +72,9 @@ public class NewUserActivity extends AppCompatActivity {
 
     public void createUser(View v)
     {
+        // This will allow the user to be added to the database
+        // once the user table has been added to the database
+        // db.addUser(userName, firstName, lastName, email, password)
         Intent launchMainMenu = new Intent(this, MainMenuActivity.class);
 
         startActivity(launchMainMenu);

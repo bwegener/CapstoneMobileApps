@@ -1,6 +1,6 @@
 <resources>
     <!-- App Name -->
-    <string name="app_name">CapstoneMobileApps</string>
+    <string name="app_name">Audiate</string>
     <string name="splash_screen_text">Audiate</string>
 
     <!-- Log-In -->
