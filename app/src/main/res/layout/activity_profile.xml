@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sheetmusic"
     android:orientation="vertical"
-    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.NewUserActivity">
+    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.ProfileActivity">
 
 
     <EditText
@@ -76,7 +75,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="179dp"
         android:orientation="horizontal">
 
         <Button
@@ -88,7 +87,7 @@
             android:layout_weight="1"
             android:onClick="createUser"
             android:padding="@dimen/buttons_padding"
-            android:text="@string/sign_up_button"
+            android:text="@string/create_profile_button"
             android:textSize="@dimen/medium_text_size"/>
 
         <Button
@@ -102,6 +101,21 @@
             android:padding="@dimen/buttons_padding"
             android:text="@string/cancel_button"
             android:textSize="@dimen/medium_text_size"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/detectVocalRangeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detect_vocal_range_button"
+            android:textSize="@dimen/medium_text_size"
+            android:layout_marginLeft="100dp"/>
 
     </LinearLayout>
 </LinearLayout>

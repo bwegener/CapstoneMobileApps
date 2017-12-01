@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class LogInActivity extends AppCompatActivity {
@@ -19,7 +20,8 @@ public class LogInActivity extends AppCompatActivity {
 
     private EditText userNameLogIn;
     private EditText passwordLogIn;
-    boolean hasRunAnimation;
+    private Button signInButton;
+    private Button newUserButton;
 
 
     @Override
@@ -29,8 +31,11 @@ public class LogInActivity extends AppCompatActivity {
 
         userNameLogIn = (EditText) findViewById(R.id.userNameLogInET);
         passwordLogIn = (EditText) findViewById(R.id.passwordLogInET);
+        signInButton = (Button) findViewById(R.id.signInButton);
+        newUserButton = (Button) findViewById(R.id.newUserButton);
 
         RunAnimation();
+
 
     }
 
@@ -41,22 +46,35 @@ public class LogInActivity extends AppCompatActivity {
         a.reset();
         userNameLogIn.clearAnimation();
         userNameLogIn.startAnimation(a);
+        passwordLogIn.clearAnimation();
+        passwordLogIn.startAnimation(a);
+        signInButton.clearAnimation();
+        signInButton.startAnimation(a);
+        newUserButton.clearAnimation();
+        newUserButton.startAnimation(a);
     }
 
 
 
-    public void signUp(View v)
+    public void createProfile(View v)
     {
-        Intent launchSignUp = new Intent(this, NewUserActivity.class);
+        Intent launchProfile = new Intent(this, ProfileActivity.class);
 
-        startActivity(launchSignUp);
+        startActivity(launchProfile);
     }
 
-    public void signIn(View v)
+    public void LogIn(View v)
     {
-        Intent launchSignIn = new Intent(this, MainMenuActivity.class);
+        /*
+        Check to see if user has logged in before
+         */
+        Intent launchLogIn = new Intent(this, MainMenuActivity.class);
 
-        startActivity(launchSignIn);
+        startActivity(launchLogIn);
+    }
+
+    public void googleMaps(View v)
+    {
 
     }
 }

@@ -32,8 +32,5 @@ public class EarTrainingMenuActivity extends AppCompatActivity {
         startActivity(launchMainMenu);
     }
 
-    public void googleMaps(View v)
-    {
 
-    }
 }

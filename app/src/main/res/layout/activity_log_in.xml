@@ -7,16 +7,21 @@
     android:layout_height="match_parent"
     android:background="@drawable/sheetmusic"
     android:orientation="vertical"
-    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.LogInActivity">
+    tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.LogInActivity"
+    android:weightSum="1">
 
 
     <EditText
         android:id="@+id/userNameLogInET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttons_text_margin"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="@dimen/buttons_text_margin"
+        android:layout_marginRight="@dimen/buttons_text_margin"
+        android:imeOptions="actionDone"
+        android:selectAllOnFocus="true"
         android:ems="10"
-        android:hint="@string/user_name"
+        android:hint="@string/user_name_email"
         android:inputType="textPersonName"
         android:text=""
         android:textAlignment="center"
@@ -26,7 +31,9 @@
         android:id="@+id/passwordLogInET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttons_text_margin"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="@dimen/buttons_text_margin"
+        android:layout_marginRight="@dimen/buttons_text_margin"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -35,30 +42,48 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="254dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.30">
 
         <Button
             android:id="@+id/signInButton"
-            android:layout_width="378dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/buttons_text_margin"
+            android:layout_marginTop="50dp"
             android:layout_weight="1"
             android:padding="@dimen/buttons_padding"
             android:textSize="@dimen/medium_text_size"
-            android:onClick="signIn"
-            android:text="@string/sign_in_button"/>
+            android:onClick="LogIn"
+            android:text="@string/log_in_button"/>
 
         <Button
             android:id="@+id/newUserButton"
-            android:layout_width="391dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/buttons_text_margin"
+            android:layout_marginTop="50dp"
             android:layout_weight="1"
             android:padding="@dimen/buttons_padding"
             android:textSize="@dimen/medium_text_size"
-            android:onClick="signUp"
-            android:text="@string/sign_up_button"/>
+            android:onClick="createProfile"
+            android:text="@string/create_profile_button"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="775dp"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/googleMaps"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:clickable="true"
+            android:onClick="googleMaps"
+            app:srcCompat="@drawable/google_maps_icon"/>
+
+        </LinearLayout>
+
 </LinearLayout>
+

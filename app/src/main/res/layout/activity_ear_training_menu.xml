@@ -5,114 +5,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sheetmusic"
     android:orientation="vertical"
     tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.EarTrainingMenuActivity"
     android:weightSum="1">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="512dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/ear_training_menu"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/medium_text_size"
+        android:textStyle="bold"
+        android:layout_weight="0.44"/>
+
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="584dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/medium_text_size"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="@string/ear_training_menu"/>
-
-        <ImageView
-            android:id="@+id/googleMaps"
-            android:focusable="true"
-            android:layout_width="190dp"
-            android:layout_height="194dp"
-            android:layout_marginLeft="50dp"
-            android:clickable="true"
-            android:onClick="googleMaps"
-            app:srcCompat="@drawable/google_maps_icon"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-
-        <ImageView
-            android:id="@+id/intervalButton"
-            android:focusable="true"
-            android:layout_width="@dimen/ear_training_buttons"
-            android:layout_height="@dimen/ear_training_buttons"
-            android:onClick="earTrainingQuiz"
-            android:clickable="true"
-            app:srcCompat="@drawable/interval"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/chordButton"
-            android:layout_width="@dimen/ear_training_buttons"
-            android:layout_height="@dimen/ear_training_buttons"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="earTrainingQuiz"
-            app:srcCompat="@drawable/chord_training"/>
-
-        <TextView
-            android:id="@+id/modalityButton"
-            android:focusable="true"
-            android:layout_width="@dimen/ear_training_buttons"
-            android:layout_height="@dimen/ear_training_buttons"
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="@color/light_blue_grey"
-            android:paddingTop="50dp"
-            android:textSize="60sp"
-            android:onClick="earTrainingQuiz"
-            android:clickable="true"
-            android:text="@string/modality_quiz_button"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1"
+        android:weightSum="3"
         >
 
-        <ImageView
-            android:id="@+id/returnButton"
-            android:layout_width="617dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center_horizontal"
-            android:clickable="true"
-            android:onClick="returnToMain"
-            android:focusable="true"
-            app:srcCompat="@drawable/go_back_black"/>
+        <LinearLayout
+            android:layout_width="@dimen/ear_training_buttons"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="3">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:textAlignment="center"
-            android:layout_marginLeft="75dp"
-            android:layout_marginRight="75dp"
-            android:layout_marginTop="25dp"
-            android:textSize="@dimen/medium_text_size"
-            android:textColor="@color/neon_green"
-            android:background="@color/light_blue_grey"
-            android:text="@string/return_text"/>
 
+            <ImageView
+                android:id="@+id/intervalButton"
+                android:layout_width="@dimen/ear_training_buttons"
+                android:layout_height="@dimen/ear_training_buttons"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="earTrainingQuiz"
+                app:srcCompat="@drawable/interval"/>
+
+            <TextView
+                android:layout_width="@dimen/ear_training_buttons"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="@dimen/small_text_size"
+                android:text="@string/interval_quiz_button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/ear_training_buttons"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/chordButton"
+                android:layout_width="@dimen/ear_training_buttons"
+                android:layout_height="@dimen/ear_training_buttons"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="earTrainingQuiz"
+                app:srcCompat="@drawable/chord_training"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="@dimen/ear_training_buttons"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="@dimen/small_text_size"
+                android:text="@string/chord_quiz_button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/ear_training_buttons"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/modalityButton"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="earTrainingQuiz"
+                app:srcCompat="@drawable/music_scale"/>
+
+            <TextView
+                android:layout_width="@dimen/ear_training_buttons"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="@dimen/small_text_size"
+                android:text="@string/modality_quiz_button"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

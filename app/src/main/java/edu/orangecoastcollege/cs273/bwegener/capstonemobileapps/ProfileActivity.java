@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class NewUserActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_user);
+        setContentView(R.layout.activity_profile);
 
         // This should allow the users to return to the
         // LogInActivity
@@ -75,6 +75,7 @@ public class NewUserActivity extends AppCompatActivity {
         // This will allow the user to be added to the database
         // once the user table has been added to the database
         // db.addUser(userName, firstName, lastName, email, password)
+        // Needs to check to make sure the user has not already been created
         Intent launchMainMenu = new Intent(this, MainMenuActivity.class);
 
         startActivity(launchMainMenu);

@@ -9,6 +9,7 @@
     tools:context="edu.orangecoastcollege.cs273.bwegener.capstonemobileapps.SplashActivity">
 
     <TextView
+        android:id="@+id/audiateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"

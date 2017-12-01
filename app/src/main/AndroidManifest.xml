@@ -4,8 +4,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <!--
         The API key for Google Maps-based APIs is defined as a string resource.
         (See the file "res/values/google_maps_api.xml").
@@ -35,18 +34,44 @@
 
         <activity
             android:name=".GeneralSettingsActivity"
-            android:parentActivityName=".MainMenuActivity"/>
+            android:parentActivityName=".MainMenuActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".EarTrainingQuizSettingsActivity"
-            android:parentActivityName=".EarTrainingQuizActivity"/>
-        <activity android:name=".EarTrainingQuizActivity"/>
-        <activity android:name=".MainMenuActivity"/>
-        <activity android:name=".LogInActivity"/>
-        <activity android:name=".SightSingingQuizActivity"/>
-        <activity android:name=".AuditionRoomActivity"/>
-        <activity android:name=".NewUserActivity"/>
-        <activity android:name=".EarTrainingMenuActivity"/>
-        <activity android:name=".GoogleMapsActivity">
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".EarTrainingQuizActivity"
+            android:parentActivityName=".EarTrainingMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainMenuActivity"
+            android:parentActivityName=".LogInActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LogInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".SightSingingQuizActivity"
+            android:parentActivityName=".MainMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".AuditionRoomActivity"
+            android:parentActivityName=".MainMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".LogInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".EarTrainingMenuActivity"
+            android:parentActivityName=".MainMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".GoogleMapsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".IntervalListActivity">
         </activity>
     </application>
 

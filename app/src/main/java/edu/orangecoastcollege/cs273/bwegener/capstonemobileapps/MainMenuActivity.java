@@ -31,4 +31,10 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
     }
+
+    public void editProfile(View v) {
+
+        Intent launchProfile = new Intent(this, ProfileActivity.class);
+        startActivity(launchProfile);
+    }
 }
