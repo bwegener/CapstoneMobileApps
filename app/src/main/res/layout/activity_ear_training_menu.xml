@@ -43,7 +43,7 @@
                 android:layout_height="@dimen/ear_training_buttons"
                 android:clickable="true"
                 android:focusable="true"
-                android:onClick="earTrainingQuiz"
+                android:onClick="intervalQuiz"
                 app:srcCompat="@drawable/interval"/>
 
             <TextView
@@ -68,7 +68,7 @@
                 android:layout_height="@dimen/ear_training_buttons"
                 android:clickable="true"
                 android:focusable="true"
-                android:onClick="earTrainingQuiz"
+                android:onClick="chordQuiz"
                 app:srcCompat="@drawable/chord_training"/>
 
             <TextView
@@ -94,7 +94,7 @@
                 android:layout_height="250dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:onClick="earTrainingQuiz"
+                android:onClick="modalityQuiz"
                 app:srcCompat="@drawable/music_scale"/>
 
             <TextView

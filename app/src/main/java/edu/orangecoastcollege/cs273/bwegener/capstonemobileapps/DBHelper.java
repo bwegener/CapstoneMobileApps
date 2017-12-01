@@ -16,9 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by Brian Wegener on 11/16/2017.
- */
 
 public class DBHelper extends SQLiteOpenHelper {
 

@@ -1,8 +1,10 @@
 package edu.orangecoastcollege.cs273.bwegener.capstonemobileapps;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -10,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,8 +21,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Handler;
@@ -28,6 +36,8 @@ import java.util.logging.LogRecord;
 public class EarTrainingQuizActivity extends AppCompatActivity {
 
     private static final String TAG = "Ear Training Quiz";
+
+    private Context mContext;
 
     private static final int QUESTIONS_IN_QUIZ = 10;
 
@@ -85,7 +95,14 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // This should fill out the content in the ear training settings.
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new EarTrainingSettingsActivityFragment()).commit();
+        // getFragmentManager().beginTransaction().replace(android.R.id.content, new EarTrainingSettingsActivityFragment()).commit();
+
+        mQuizIntervalsList = new ArrayList<>(QUESTIONS_IN_QUIZ);
+
+        rng = new SecureRandom();
+
+        // TODO: THIS has issues
+        // handler = new Handler();
 
         mQuestionNumberTextView = (TextView) findViewById(R.id.questionNumberTextView);
         mEarTrainingImageView = (ImageView) findViewById(R.id.earTrainingImageView);
@@ -97,6 +114,47 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         mButtons[2] = (Button) findViewById(R.id.button3);
         mButtons[3] = (Button) findViewById(R.id.button4);
 
+
+        mQuestionNumberTextView.setText(getString(R.string.question, 1, QUESTIONS_IN_QUIZ));
+
+        AssetManager am = mContext.getAssets();
+        InputStream inStream;
+
+        // TODO: NEED TO FIX THE inStream at the BufferedReader
+        try {
+            inStream = am.open("intervals.csv");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        /*
+        // THIS GETS THE FILES FROM THE CSV
+        BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
+        String line;
+        try {
+            while ((line = buffer.readLine()) != null) {
+                String[] fields = line.split(",");
+                if(fields.length != 4) {
+                    Log.d("Audiate", "Skipping Bad CSV Row: " + Arrays.toString(fields));
+                    continue;
+                }
+                int id = Integer.parseInt(fields[0].trim());
+                String name = fields[1].trim();
+                String ratio = fields[2].trim();
+                double cents = Double.parseDouble(fields[3].trim());
+
+                // TODO: Figure out what this is referred to in our program
+                // addInterval(new Interval(id, name, ratio, cents));
+            }
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        */
+
+
         // TODO: Finish Looping through intervals
         // TODO: go to GitHub copy/paste DBHelper
         // List of all intervals
@@ -106,9 +164,6 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         // Call the import from CSV method from db
         // make a list populate with getAllIntervals()
 
-        // Create 3 lists: intervals, chord quality, modality
-
-        //
 
         mAllIntervalsList = new ArrayList<>();
         mAllChordsList = new ArrayList<>();
@@ -117,22 +172,20 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         // TODO: Fix this
         /*
         Need help with this
-         */
+
         for (ChordScale c : mAllChordScaleList) {
             mAllIntervalsList.add(c.getName());
             mAllChordsList.add(c.getName());
             mAllModesList.add(c.getName());
         }
+        */
 
-        mQuizIntervalsList = new ArrayList<>(QUESTIONS_IN_QUIZ);
-
-        rng = new SecureRandom();
 
         // TODO: Fix this
         /*
         HANDLER?
         Different from Superheroes
-         */
+
         handler = new Handler() {
             @Override
             public void publish(LogRecord logRecord) {
@@ -149,6 +202,7 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
 
             }
         };
+        */
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.registerOnSharedPreferenceChangeListener(mPreferenceChangeListener);
@@ -174,14 +228,12 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
                 mQuizIntervalsList.add(mAllIntervalsList.get(randomPosition));
         }
 
-        // TODO: Make sure ryan agrees on naming convention
-        // I think this is the easiest naming convention for the method
         loadNextQuestion();
     }
 
     private void loadNextQuestion() {
 
-        // TODO: Might be wrong
+        // TODO: Need to remove the first question from the list
         mCorrectInterval = mQuizIntervalsList.remove(0);
 
         mAnswerTextView.setText("");
@@ -190,14 +242,6 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
 
         mQuestionNumberTextView.setText(getString(R.string.question, questionNumber, QUESTIONS_IN_QUIZ));
 
-
-        // TODO: this needs to cycle through the different notes and create intervals, and...
-        // TODO: connect them to the green button (play) ImageView
-        /*
-        try {
-            InputStream stream = getAssets().open(mCorrectInterval.)
-        }
-        */
 
         if(mQuizType.equals(getString(R.string.intervals)))
         {
@@ -247,6 +291,7 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
             mAnswerTextView.setTextColor(ContextCompat.getColor(this, R.color.correct_answer));
 
             if(mCorrectGuesses < QUESTIONS_IN_QUIZ) {
+
                 // TODO: Fix the handler
                 // Not sure why this has issues
 
@@ -303,5 +348,14 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
 
             addPreferencesFromResource(R.xml.preferences);
         }
+    }
+
+    /**
+     * This will play the interval so the user can guess correctly
+     * @param v
+     */
+    public void playInterval(View v)
+    {
+
     }
 }

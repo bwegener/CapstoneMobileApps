@@ -21,6 +21,8 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:clickable="true"
+        android:onClick="playInterval"
         android:background="@drawable/green_play_button"
         android:elevation="50dp"
         android:scaleType="fitCenter"/>

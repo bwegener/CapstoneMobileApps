@@ -35,6 +35,9 @@
     <string name="ear_training_menu">Ear Training Menu</string>
     <string name="return_text">Return to Main Menu</string>
     <string name="interval_directory">Interval List Directory</string>
+    <string name="chord_directory">Chord List Directory</string>
+    <string name="modality_directory">Modality List Directory</string>
+
 
     <!-- Ear Training Quiz -->
     <string name="question">Question %1$d of %2$d</string>
@@ -58,7 +61,6 @@
     <string name="restarting_quiz">Quiz will restart with your new settings</string>
     <string name="reset_quiz">Reset Quiz</string>
     <string name="default_quiz_type">Interval</string>
-
 
 
 </resources>

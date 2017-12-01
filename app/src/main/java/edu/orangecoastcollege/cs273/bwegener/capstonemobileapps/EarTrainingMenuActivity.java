@@ -17,20 +17,32 @@ public class EarTrainingMenuActivity extends AppCompatActivity {
     }
 
 
-    public void earTrainingQuiz(View v)
+    public void intervalQuiz(View v)
     {
 
-        Intent launchEarTrainingQuiz = new Intent(this, EarTrainingQuizActivity.class);
+        Intent launchIntervalList = new Intent(this, IntervalListActivity.class);
 
-        startActivity(launchEarTrainingQuiz);
+        startActivity(launchIntervalList);
     }
 
-    public void returnToMain(View v)
+    public void chordQuiz(View v)
     {
-        Intent launchMainMenu = new Intent(this, MainMenuActivity.class);
 
-        startActivity(launchMainMenu);
+        Intent launchChordList = new Intent(this, ChordListActivity.class);
+
+        startActivity(launchChordList);
+
     }
+
+    public void modalityQuiz(View v)
+    {
+
+        Intent launchModalityList = new Intent(this, ModalityListActivity.class);
+
+        startActivity(launchModalityList);
+
+    }
+
 
 
 }

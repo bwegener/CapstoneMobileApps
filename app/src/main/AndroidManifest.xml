@@ -73,6 +73,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".IntervalListActivity">
         </activity>
+        <activity android:name=".ChordListActivity">
+        </activity>
+        <activity android:name=".ModalityListActivity">
+        </activity>
     </application>
 
 </manifest>
