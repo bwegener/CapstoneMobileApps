@@ -5,13 +5,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,7 +31,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 public class EarTrainingQuizActivity extends AppCompatActivity {
 
@@ -117,26 +116,20 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
 
         mQuestionNumberTextView.setText(getString(R.string.question, 1, QUESTIONS_IN_QUIZ));
 
+
+        mAllIntervalsList = new ArrayList<>();
+
         AssetManager am = mContext.getAssets();
         InputStream inStream;
 
         // TODO: NEED TO FIX THE inStream at the BufferedReader
         try {
             inStream = am.open("intervals.csv");
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        /*
-        // THIS GETS THE FILES FROM THE CSV
-        BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
-        String line;
-        try {
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
+            String line;
             while ((line = buffer.readLine()) != null) {
                 String[] fields = line.split(",");
-                if(fields.length != 4) {
+                if (fields.length != 4) {
                     Log.d("Audiate", "Skipping Bad CSV Row: " + Arrays.toString(fields));
                     continue;
                 }
@@ -146,13 +139,16 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
                 double cents = Double.parseDouble(fields[3].trim());
 
                 // TODO: Figure out what this is referred to in our program
-                // addInterval(new Interval(id, name, ratio, cents));
+               // mAllIntervalsList.add(new Interval(id, name, ratio, cents));
             }
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             e.printStackTrace();
         }
-        */
+
+
+
 
 
         // TODO: Finish Looping through intervals
@@ -165,7 +161,7 @@ public class EarTrainingQuizActivity extends AppCompatActivity {
         // make a list populate with getAllIntervals()
 
 
-        mAllIntervalsList = new ArrayList<>();
+
         mAllChordsList = new ArrayList<>();
         mAllModesList = new ArrayList<>();
 
