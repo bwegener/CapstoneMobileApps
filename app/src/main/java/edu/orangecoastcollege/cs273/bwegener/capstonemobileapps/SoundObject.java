@@ -14,13 +14,14 @@ package edu.orangecoastcollege.cs273.bwegener.capstonemobileapps;
  * @author Ryan Millett
  * @version 2.0
  */
-public abstract class SoundObject { // TODO: implement PLAYABLE interface
+public abstract class SoundObject { // TODO: implement PLAYABLE interface (?)
 
     /**
      * int constant used as a default duration in milliseconds for all <code>SoundObjects</code>.
      */
-    public static final int DEFAULT_DURATION_MILLISECONDS = 3000;
+    public static final int DEFAULT_DURATION_MILLISECONDS = 3 * 1000;
 
+    protected long mId;
     protected String mName;
     protected String mDescription;
     protected int mDurationMilliseconds;
@@ -29,8 +30,9 @@ public abstract class SoundObject { // TODO: implement PLAYABLE interface
      * Default constructor
      */
     public SoundObject() {
+        mId = -1;
         mName = "";
-        mDescription = "";
+        mDescription = "No information";
         mDurationMilliseconds = DEFAULT_DURATION_MILLISECONDS;
     }
 
@@ -40,8 +42,21 @@ public abstract class SoundObject { // TODO: implement PLAYABLE interface
      * @param name <code>SoundObject</code> name
      */
     public SoundObject(String name) {
+        mId = -1;
         mName = name;
-        mDescription = "";
+        mDescription = "No information";
+        mDurationMilliseconds = DEFAULT_DURATION_MILLISECONDS;
+    }
+
+    /**
+     * Overloaded constructor
+     *
+     * @param name <code>SoundObject</code> name
+     */
+    public SoundObject(long id, String name) {
+        mId = id;
+        mName = name;
+        mDescription = "No information";
         mDurationMilliseconds = DEFAULT_DURATION_MILLISECONDS;
     }
 
@@ -52,8 +67,9 @@ public abstract class SoundObject { // TODO: implement PLAYABLE interface
      * @param durationMilliseconds Duration of <code>SoundObject</code> in milliseconds
      */
     public SoundObject(String name, int durationMilliseconds) {
+        mId = -1;
         mName = name;
-        mDescription = "";
+        mDescription = "No information";
         mDurationMilliseconds = durationMilliseconds;
     }
 

@@ -1,6 +1,5 @@
 package edu.orangecoastcollege.cs273.bwegener.capstonemobileapps;
 
-
 /**
  * Helper class used to handle intervals expressed in either ratios/fractions or cents for the purpose
  * of frequency calculations.

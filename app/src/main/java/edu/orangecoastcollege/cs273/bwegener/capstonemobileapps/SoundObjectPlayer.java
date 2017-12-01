@@ -6,7 +6,6 @@ import android.media.AudioTrack;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
 /**
  * The <code>SoundObjectPlayer</code> class is used to read a <code>SoundObject</code> then write
  * and play an audio signal constructed according the parameters of the passed <code>SoundObject</code>.
@@ -41,7 +40,7 @@ public class SoundObjectPlayer {
 
     private static AudioTrack mAudioTrack;
 
-    // TODO: constructors
+    // TODO: constructors(?)
 
     /**
      * Loads a <code>SoundObject</code> into the <code>SoundObjectPlayer</code> and parses it based

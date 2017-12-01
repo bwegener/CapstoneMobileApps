@@ -46,40 +46,73 @@ public class ChordScale extends SoundObject {
      */
     public static final String PLAYBACK_MODE_ALBERTI_BASS = "Alberti";
 
-    private long mId;
     private int mSize;
     private ArrayList<Note> mChordMembers;
     private String mPlayBackMode;
-    private int mDurationMilliseconds;
+    private String mSCLfileName;
 
     /**
      * Default constructor
      */
     public ChordScale() {
         super();
-        mId = -1;
-        mSize = 0;
+        mSize = 2;
         mChordMembers = new ArrayList<>(mSize);
         mPlayBackMode = PLAYBACK_MODE_BLOCK_CHORD;
         mDurationMilliseconds = SoundObject.DEFAULT_DURATION_MILLISECONDS;
+        mDescription = "No information";
+        mSCLfileName = "No associated .scl file";
+        mDurationMilliseconds = SoundObject.DEFAULT_DURATION_MILLISECONDS;
     }
 
+    /**
+     * Overloaded constructor
+     *
+     * @param name
+     */
     public ChordScale(String name) {
         super(name);
-        mId = -1;
-        mSize = 0;
+        mSize = 2;
         mChordMembers = new ArrayList<>(mSize);
         mPlayBackMode = PLAYBACK_MODE_BLOCK_CHORD;
         mDurationMilliseconds = SoundObject.DEFAULT_DURATION_MILLISECONDS;
+        mDescription = "No information";
+        mSCLfileName = "No associated .scl file";
+    }
+    public ChordScale(String name, int size) {
+        super(name);
+        mSize = size;
+        mChordMembers = new ArrayList<>(mSize);
+        mPlayBackMode = PLAYBACK_MODE_BLOCK_CHORD;
+        mDurationMilliseconds = SoundObject.DEFAULT_DURATION_MILLISECONDS;
+        mDescription = "No information";
+        mSCLfileName = "No associated .scl file";
     }
 
-    public ChordScale(String name, long id) {
+    public ChordScale(String name, int size, String description, String sclFileName) {
         super(name);
-        mId = id;
-        mSize = 0;
+        mSize = size;
         mChordMembers = new ArrayList<>(mSize);
         mPlayBackMode = PLAYBACK_MODE_BLOCK_CHORD;
         mDurationMilliseconds = SoundObject.DEFAULT_DURATION_MILLISECONDS;
+        mDescription = description;
+        mSCLfileName = sclFileName;
+    }
+
+    /**
+     * Overloaded constructor
+     *
+     * @param name
+     * @param id
+     */
+    public ChordScale(long id, String name, int size) {
+        super(id, name);
+        mSize = size;
+        mChordMembers = new ArrayList<>(mSize);
+        mPlayBackMode = PLAYBACK_MODE_BLOCK_CHORD;
+        mDurationMilliseconds = SoundObject.DEFAULT_DURATION_MILLISECONDS;
+        mDescription = "No information";
+        mSCLfileName = "No associated .scl file";
     }
 
     /**
@@ -167,10 +200,7 @@ public class ChordScale extends SoundObject {
         String[] allChordMemberRatios = new String[this.mSize];
         int i = 0;
         for (Note note : this.mChordMembers) {
-            allChordMemberRatios[i]
-                    = convertDecimalToRatio(
-                    this.mChordMembers.get(0).getPitchFrequency()
-                            / this.mChordMembers.get(i).getPitchFrequency());
+            allChordMemberRatios[i] = note.getRatio();
             i++;
         }
         return allChordMemberRatios;
@@ -185,7 +215,7 @@ public class ChordScale extends SoundObject {
      *          two chord members.
      */
     public String getIntervalRatio(int pos1, int pos2) {
-        return convertDecimalToRatio(mChordMembers.get(pos1).getPitchFrequency()
+        return IntervalHandler.convertDecimalToRatio(mChordMembers.get(pos1).getPitchFrequency()
                 / mChordMembers.get(pos2).getPitchFrequency());
     }
 
@@ -200,10 +230,11 @@ public class ChordScale extends SoundObject {
      */
     public double getIntervalDistanceInCents(int pos1, int pos2) {
         // Get whole-number ratio
-        String ratio = convertDecimalToRatio(this.getChordMemberAtPos(pos2).getPitchFrequency() /
-                this.getChordMemberAtPos(pos1).getPitchFrequency());
+        String ratio = IntervalHandler.convertDecimalToRatio(
+                this.getChordMemberAtPos(pos2).getPitchFrequency()
+                        / this.getChordMemberAtPos(pos1).getPitchFrequency());
         // Convert to cents
-        return 1200*Math.log(parseRatio(ratio))/Math.log(2);
+        return IntervalHandler.convertRatioToCents(ratio);
     }
 
     /**
@@ -238,46 +269,11 @@ public class ChordScale extends SoundObject {
         }
     }
 
-    /**
-     * Converts a decimal (double value) to a string representing the approximate fraction equivalent
-     *
-     * This method is used to express the relationship between two frequencies as a simple fraction
-     *
-     * @param decimal
-     * @return A String representing an approximate whole-number ratio
-     */
-    private String convertDecimalToRatio(double decimal){
-        if (decimal < 0){
-            return "-" + convertDecimalToRatio(-decimal);
-        }
-        double tolerance = 1.0E-6;
-        double m1 = 1; double m2 = 0;
-        double n1 = 0; double n2 = 1;
-        double b = decimal;
-        do {
-            double a = Math.floor(b);
-            double aux = m1; m1 = a * m1 + m2; m2 = aux;
-            aux = n1; n1 = a * n1 + n2; n2 = aux;
-            b = 1 / (b - a);
-        } while (Math.abs(decimal - m1 / n1) > decimal * tolerance);
-
-        return (int) m1 + "/" + (int) n1;
+    public String getSCLfileName() {
+        return mSCLfileName;
     }
 
-    /**
-     * Converts a String representing a whole-number ratio into a decimal (double value).
-     *
-     * This ratio value is used to calculate a specified interval above a given fundamental frequency
-     *
-     * @param ratio A String representing a whole-number ratio
-     * @return Converted decimal (double value)
-     */
-    private double parseRatio(String ratio) {
-        if (ratio.contains("/")) {
-            String[] rat = ratio.split("/");
-            return Double.parseDouble(rat[0]) / Double.parseDouble(rat[1]);
-        }
-        else
-            return Double.parseDouble(ratio);
+    public void setSCLfileName(String SCLfileName) {
+        this.mSCLfileName = SCLfileName;
     }
 }

@@ -19,6 +19,10 @@ public class Note extends SoundObject {
      */
     public static final int DEFAULT_FREQUENCY = 440;
 
+    /**
+     * String constant used as a default ratio for <code>Note</code> objects. A ratio of
+     * 1/1——a unison——sets the note as the root of a <code>ChordScale</code> object.
+     */
     public static final String DEFAULT_RATIO = "1/1";
 
     private double mPitchFrequency;
