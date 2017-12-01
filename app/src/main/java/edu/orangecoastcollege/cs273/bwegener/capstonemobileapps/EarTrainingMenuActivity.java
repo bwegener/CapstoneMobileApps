@@ -17,7 +17,8 @@ public class EarTrainingMenuActivity extends AppCompatActivity {
     }
 
 
-    public void earTrainingQuiz(View v) {
+    public void earTrainingQuiz(View v)
+    {
 
         Intent launchEarTrainingQuiz = new Intent(this, EarTrainingQuizActivity.class);
 

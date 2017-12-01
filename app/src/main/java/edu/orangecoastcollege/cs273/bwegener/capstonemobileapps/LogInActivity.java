@@ -2,10 +2,11 @@ package edu.orangecoastcollege.cs273.bwegener.capstonemobileapps;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 
 public class LogInActivity extends AppCompatActivity {
@@ -18,6 +19,7 @@ public class LogInActivity extends AppCompatActivity {
 
     private EditText userNameLogIn;
     private EditText passwordLogIn;
+    boolean hasRunAnimation;
 
 
     @Override
@@ -25,13 +27,20 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        // TODO: Use anim to bring the edit texts in
-
         userNameLogIn = (EditText) findViewById(R.id.userNameLogInET);
         passwordLogIn = (EditText) findViewById(R.id.passwordLogInET);
 
+        RunAnimation();
+
+    }
 
 
+    private void RunAnimation()
+    {
+        Animation a = AnimationUtils.loadAnimation(this, R.anim.anim);
+        a.reset();
+        userNameLogIn.clearAnimation();
+        userNameLogIn.startAnimation(a);
     }
 
 
